@@ -13,4 +13,4 @@
 |
 */
 
-$router->get('/', ['']);
+$router->get('teste', 'DbController@test');
