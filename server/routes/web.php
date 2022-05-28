@@ -13,4 +13,8 @@
 |
 */
 
-$router->get('teste', 'DbController@test');
+$router->get('/', function(){
+    return 'helloworld';
+});
+
+$router->post('/', 'DbController@tester');

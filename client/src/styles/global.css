@@ -51,5 +51,19 @@ button {
   padding: 3%;
   background: #f19a6f;
   background: linear-gradient(-20deg, #b59eae, rgba(0, 0, 0, 0) 25%), linear-gradient(-100deg, #e8bea6, #e8bea6 0%, #f4a771 50%, #f65773);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+button > i {
+  font-size: 1.5rem;
+  margin-inline: 0.5vw;
 }
 /*# sourceMappingURL=global.css.map */

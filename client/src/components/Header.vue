@@ -1,7 +1,8 @@
 <template>
     <header>
-        <h1>Database Connection Tester</h1>
-        <a class="madewith">made with Lumen + Vue</a>
+        <h1><i class="fa-solid fa-database"></i> Database Connection Tester</h1>
+        <a class="madewith">made with Lumen<i class="fa-solid fa-lightbulb madewith"></i> + Vue<i class="fa-brands fa-vuejs madewith"></i>
+</a>
     </header>
 </template>
 

@@ -53,6 +53,10 @@ select{
     border-radius: 20px;
 }
 
+// label{
+//     text-align: left;
+// }
+
 button{
     font-size: 2rem;
     color: white;
@@ -62,6 +66,14 @@ button{
     padding: 3%;
     background: $average;
     background: linear-gradient(-20deg, rgba(181, 158, 174, 1), rgba(0, 0, 0, 0) 25%), linear-gradient(-100deg, $corner-top-right, $corner-top-right 0%, $middle 50%, $corner-bottom-left);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button > i{
+    font-size: 1.5rem;
+    margin-inline: 0.5vw;
 }
 
 

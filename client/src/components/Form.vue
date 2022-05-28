@@ -1,13 +1,15 @@
 <template>
     <div class="form-tester">
 
+        <div class="response" v-if="response != ''">{{response}}</div>
+        <br/>
+
         <label>Database Type</label>
         <select v-model="dbtype">
             <option>MySQL</option>
             <option>Microsoft SQL Server</option>
             <option>PostgreSQL</option>
-            <option>MongoDB</option>
-            <option>MariaDB</option>
+            <option>Oracle</option>
             <option>I don't know</option>
         </select>
 
@@ -18,10 +20,10 @@
 
         <br/>
 
-        <label>Port</label>
+        <!-- <label>Port</label>
         <input v-model="port"/>
         
-        <br/>
+        <br/> -->
 
         <label>Database Name</label>
         <input v-model="dbname"/>
@@ -38,13 +40,17 @@
 
         <br/>
 
-        <button @click="send">Test</button>
+        <button @click="send">Test <i class="fa-solid fa-arrow-right"></i></button>
+        
     </div>
     
     
 </template>
 
 <script>
+
+    import axios from "axios"
+
     export default{
         name:'Form',
         data() {
@@ -54,19 +60,24 @@
                 port: '',
                 dbname: '',
                 username: '',
-                password: '',   
+                password: '', 
+                response: '', 
             }
         },
         methods: {
             send(){
-                console.log([
-                    this.dbtype,
-                    this.host,
-                    this.port,
-                    this.dbname,
-                    this.username,
-                    this.password,
-                ])
+                axios.post('http://localhost:8080/', {
+                    servername: this.host,
+                    dbname: this.dbname,
+                    username: this.username,
+                    password: this.password,
+                })
+                .then((response) => {
+                    this.response = response.data;
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
             }
         }
     }
@@ -80,5 +91,9 @@
         flex-direction: column;
         align-items: center;
         padding: 5%;
+    }
+
+    .response{
+        color: var(--color-pinky);
     }
 </style>
