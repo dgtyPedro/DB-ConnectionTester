@@ -1,26 +1,44 @@
 <template>
     <div class="form-tester">
-        <label>Connection Method</label>
-        <select>
-            <option>mySQL</option>
+
+        <label>Database Type</label>
+        <select v-model="dbtype">
+            <option>MySQL</option>
+            <option>Microsoft SQL Server</option>
+            <option>PostgreSQL</option>
+            <option>MongoDB</option>
+            <option>MariaDB</option>
+            <option>I don't know</option>
         </select>
 
+        <br/>
+
         <label>Host</label>
-        <input/>
+        <input v-model="host"/>
+
+        <br/>
 
         <label>Port</label>
-        <input/>
+        <input v-model="port"/>
+        
+        <br/>
 
         <label>Database Name</label>
-        <input/>
+        <input v-model="dbname"/>
+
+        <br/>
 
         <label>Username</label>
-        <input/>
+        <input v-model="username"/>
+
+        <br/>
 
         <label>Password</label>
-        <input/>
+        <input v-model="password"/>
 
-        <button>Test</button>
+        <br/>
+
+        <button @click="send">Test</button>
     </div>
     
     
@@ -29,7 +47,30 @@
 <script>
     export default{
         name:'Form',
+        data() {
+            return {
+                dbtype: '',
+                host: '',
+                port: '',
+                dbname: '',
+                username: '',
+                password: '',   
+            }
+        },
+        methods: {
+            send(){
+                console.log([
+                    this.dbtype,
+                    this.host,
+                    this.port,
+                    this.dbname,
+                    this.username,
+                    this.password,
+                ])
+            }
+        }
     }
+
 </script>
 
 <style scoped>
@@ -38,5 +79,6 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        padding: 5%;
     }
 </style>

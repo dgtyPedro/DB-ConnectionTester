@@ -8,7 +8,7 @@
 <script>
   import Header from './components/Header'; 
   import Tester from './components/Tester'; 
-
+  
 
   import './styles/global.css'
 

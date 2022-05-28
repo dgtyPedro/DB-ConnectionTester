@@ -8,10 +8,19 @@ $average: #f19a6f; //fallback
 $socket: #f6a76e;
 $socket-reflection: #fdede0;
 
+@import url('https://fonts.googleapis.com/css2?family=Galdeano&display=swap');
+
+:root{
+    --color-pinky: #f65773;
+    --color-orangy: #f19a6f;
+    --color-purplish: #b59eae;
+}
+
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Galdeano', sans-serif;
 }
 
 #app{
@@ -23,3 +32,38 @@ $socket-reflection: #fdede0;
     color: white;
     font-family: "Source Sans Pro", sans-serif;
 }
+
+input{
+    background-color: transparent;
+    border: 0;
+    border-bottom: $average 2px solid;
+    width: 100%;
+    outline: 0px;
+    color: $average;
+    font-size: 1.5rem;
+}
+
+select{
+    font-size: 1.5rem;
+    color: $average;
+    border: 2px solid $average;
+    width: 90%;
+    background-color: transparent;
+    padding: 1%;
+    border-radius: 20px;
+}
+
+button{
+    font-size: 2rem;
+    color: white;
+    width: 60%;
+    border-radius: 10px;
+    border: 0;
+    padding: 3%;
+    background: $average;
+    background: linear-gradient(-20deg, rgba(181, 158, 174, 1), rgba(0, 0, 0, 0) 25%), linear-gradient(-100deg, $corner-top-right, $corner-top-right 0%, $middle 50%, $corner-bottom-left);
+}
+
+
+
+

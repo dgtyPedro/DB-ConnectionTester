@@ -18,6 +18,7 @@
         justify-content: center;
         align-items: end;
         padding: 1%;
+        margin-bottom: 5vh;
     }
 
     .madewith{
