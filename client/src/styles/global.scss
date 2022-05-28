@@ -1,0 +1,25 @@
+$corner-top-left: #fa6674; // not used
+$corner-bottom-left: #f65773;
+$middle: #f4a771;
+$corner-top-right: #e8bea6;
+$corner-bottom-right: #b59eae; // not used
+$average: #f19a6f; //fallback
+
+$socket: #f6a76e;
+$socket-reflection: #fdede0;
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#app{
+    height: 100vh;
+    width: 100vw;
+    
+    background: $average;
+    background: linear-gradient(-20deg, rgba(181, 158, 174, 1), rgba(0, 0, 0, 0) 25%), linear-gradient(-100deg, $corner-top-right, $corner-top-right 0%, $middle 50%, $corner-bottom-left);
+    color: white;
+    font-family: "Source Sans Pro", sans-serif;
+}
