@@ -2,12 +2,14 @@
   <div id="app">
     <Header />
     <Tester />
+    <About />
   </div>
 </template>
 
 <script>
   import Header from './components/Header'; 
   import Tester from './components/Tester'; 
+  import About from './components/About'; 
   
 
   import './styles/global.css'
@@ -16,7 +18,8 @@
     name: 'App',
     components: {
       Header,
-      Tester
+      Tester,
+      About
     }
   }
 </script>

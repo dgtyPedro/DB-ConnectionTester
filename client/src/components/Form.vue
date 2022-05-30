@@ -85,6 +85,7 @@
 </script>
 
 <style scoped>
+
     .form-tester{
         height: 100%;
         display: flex;
@@ -96,4 +97,5 @@
     .response{
         color: var(--color-pinky);
     }
+
 </style>
