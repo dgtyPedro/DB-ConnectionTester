@@ -66,6 +66,7 @@
         },
         methods: {
             send(){
+                console.log('Sending . . .')
                 axios.post('http://localhost:8080/', {
                     servername: this.host,
                     dbname: this.dbname,
