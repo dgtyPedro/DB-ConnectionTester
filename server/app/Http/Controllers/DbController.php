@@ -20,17 +20,26 @@ class DbController extends Controller
         $username = $request->post('username');
         $password = $request->post('password');
 
+        $headers = [
+            'Access-Control-Allow-Origin'      => '*',
+            'Access-Control-Allow-Methods'     => 'POST, GET, OPTIONS, PUT, DELETE',
+            'Access-Control-Allow-Credentials' => 'true',
+            'Access-Control-Max-Age'           => '86400',
+            'Access-Control-Allow-Headers'     => 'Content-Type, Authorization, X-Requested-With'
+        ];
+
         if($servername == "localhost" && $dbname == "database" && $username == "root" && $password == ""){
-            return "Connected successfully";
+            return response("Connected successfully")->withHeaders($headers);
         }
 
         try{
             $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
             // set the PDO error mode to exception
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            return "Connected successfully";
+            
+            return response("Connected successfully")->withHeaders($headers);
         }catch(\PDOException $e){
-            return 'Invalid credentials';
+            return response("Invalid credentials")->withHeaders($headers);
         }
 
     }

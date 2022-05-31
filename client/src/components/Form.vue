@@ -67,7 +67,10 @@
         methods: {
             send(){
                 console.log('Sending . . .')
-                axios.post('http://localhost:8080/', {
+                axios.defaults.headers.post['Content-Type'] ='application/json;charset=utf-8';
+                axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
+
+                axios.post('https://dbtester-server.herokuapp.com/', {
                     servername: this.host,
                     dbname: this.dbname,
                     username: this.username,
