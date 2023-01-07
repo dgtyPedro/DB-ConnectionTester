@@ -68,7 +68,7 @@
             send(){
                 console.log('Sending . . .')
 
-                axios.post('https://dbtester-server.herokuapp.com/', {
+                axios.post('https://db-connection-tester.herokuapp.com/', {
                     servername: this.host,
                     dbname: this.dbname,
                     username: this.username,
